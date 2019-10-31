@@ -1,0 +1,6 @@
+#pragma once
+
+#define soma 1
+#define subtracao 2
+#define multiplicacao 3
+#define divisao 4
