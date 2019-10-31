@@ -1,89 +1,38 @@
-// Calculadora.cpp : Defines the entry point for the console application.
+// calculadora2.cpp : Defines the entry point for the console application.
+//
 
 #include "stdafx.h"
-
-int add(int a, int b);
-int sub(int a, int b);
-int mult(int a, int b);
-int div(int a, int b);
+#include "const.h"
+#include "functions.h"
 
 
-int main(){
-	
-	while(1){
+int main()
+{
+	while (1) {
 
-		int op=0;
+		int op = 0;
 		int num1, num2;
 		int resultado = 0;
-	
-		cout<<"Calculadora"<<endl;		
-		cout << "Entre com o primeiro numero: ";
-		cin >> num1;
-		cout << "Entre com o segundo numero: ";
-		cin >> num2;
-		
-		cout<<"Selecione uma opcao: "<<endl;
-		cout << soma << " - Add   |   "<<subtracao<<" - Sub\n";
-		cout << multiplicacao<<" - Mult   |   "<<divisao<<" - Div\n";
+
+		show_menu();
 		cin >> op;
-		
+
+		num1 = read_number();
+		num2 = read_number();
+
 		switch (op) {
 			case soma:
-				resultado=add(num1,num2);
+				resultado = add(num1, num2);			
 				break;
 			case subtracao:
-				resultado=sub(num1, num2);
-				break;
-			case multiplicacao:
-				resultado = mult(num1, num2);
-				break;
-			case divisao:
-				resultado = div(num1, num2);
+				resultado = sub(num1, num2);
 				break;
 			default:
-				cout << "Invalido :|\n";
 				break;
 		}
-		
-		cout<<"O Resultado eh: "<<resultado<<endl;
-
-		char keep[];
-		cout << "Deseja repetir? ";
-		cin >> keep;
-		if(keep == "sim" || keep=="s" || keep=="1" || keep=="y" || keep=="S"){
-			system("pause");
-			system("cls");
-		}
-		else {
-			cout << "Saindo...\n";
-			system("pause");
-			break;
-		}
+		cout << "O resultado foi: " << resultado << endl;
 	}
+
     return 0;
 }
 
-//Funções__________________________________
-int add(int a, int b) {
-	int s = 0;
-	s = a + b;
-	return s;
-}
-
-int sub(int a, int b) {
-	int s = 0;
-	s = a - b;
-	return s;
-}
-
-int mult(int a, int b) {
-	int s = 0;
-	s = a * b;
-	return s;
-}
-
-int div(int a, int b) {
-	int s = 0;
-	s = a / b;
-	return s;
-}
