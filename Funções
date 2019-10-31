@@ -1,0 +1,30 @@
+#pragma once
+
+void show_menu() {
+	cout << "Calculadora" << endl;
+	cout << "Selecione uma opcao: " << endl;
+	cout << soma << " - Somar\n";
+	cout << subtracao << " - Subtrair\n";
+	cout << "6 - Sair \n";
+}
+
+int read_number() {
+	int num = 0;
+	cout << "Entre com o numero: ";
+	cin >> num;
+	return num;
+}
+
+int add(int a, int b)
+{
+	int c;
+	c = a + b;
+	return c;
+}
+
+int sub(int a, int b)
+{
+	int c;
+	c = a - b;
+	return c;
+}
